@@ -1,0 +1,490 @@
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+        background:linear-gradient(135deg, #150B26, #142c44);/*#150B26;
+		
+		/*#0b1d2e*/
+        color:white;
+    }
+
+    .background{
+        /*background: linear-gradient(135deg, #150B26, #142c44);*/
+        min-height:100vh;
+        width:100%;
+		height:100%;
+        padding:20px 40px;
+        overflow:hidden;
+		position: relative;
+		z-index: 0;
+
+    }
+
+    .background::before{
+        content:"";
+        position:absolute;
+        top:0; left:0;
+        width:100%; height:100%;
+        background-image:
+            linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+            linear-gradient(0deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+        /*background-size:45px 45px;*/
+        opacity:0.2;
+		z-index: 1;/*-1*/
+    }
+	
+	
+    /* NAV */
+    nav{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        position:relative;
+        z-index:2;
+    }
+
+    nav .menu-icon{
+        font-size:28px;
+        cursor:pointer;
+    }
+
+    nav ul{
+        display:flex;
+        list-style:none;
+        gap:30px;
+    }
+
+    nav ul li{
+        cursor:pointer;
+        font-size:14px;
+        letter-spacing:1px;
+    }
+
+    nav .logo{
+        font-weight:bold;
+        font-size:14px;
+		background: linear-gradient(135deg, #150B26, #142c44);
+        overflow:hidden;
+		
+		z-index: 0;
+    }
+
+    /* CONTEÚDO */
+    .content{
+        margin-top:80px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        position:relative;
+        z-index:2;
+    }
+
+    .left{
+        max-width:500px;
+    }
+
+    .left h1{
+        font-size:48px;
+        line-height:1.1;
+        margin-bottom:20px;
+        font-weight:600;
+    }
+
+    .left p{
+        font-size:15px;
+        color:#d4d4d4;
+        margin-bottom:30px;
+        line-height:1.5;
+        max-width:380px;
+    }
+
+    .buttons{
+        display:flex;
+        gap:15px;
+    }
+
+    .buttons button{
+        padding:12px 24px;
+        border:2px solid white;
+        background:white;
+        color:#0b1d2e;
+        cursor:pointer;
+        border-radius:4px;
+        font-weight:bold;
+        transition:0.3s;
+    }
+
+    .buttons button:nth-child(1){
+        background:#0b1d2e;
+        color:white;
+        border-color:white;
+    }
+
+    /* IMAGEM */
+    .right{
+        position:relative;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .circle{
+        width:360px;
+        height:360px;
+        background:#222;
+        border-radius:50%;
+        position:absolute;
+        z-index:1; /*antes 1*/
+    }
+
+    .person{
+        /*position:relative;
+        z-index:2;
+        width:330px;*/
+		width:360px;
+        height:360px;
+        border-radius:50%;
+        position:auto;
+        z-index:1; /*antes 1*/
+    }
+
+    /* ---------- RESPONSIVIDADE ---------- */
+
+    /* Tablets (até 1024px) */
+    @media (max-width:1024px){
+        .content{
+            flex-direction:column;
+            text-align:center;
+            gap:40px;
+        }
+
+        .left{
+            max-width:100%;
+        }
+
+        .left h1{
+            font-size:42px;
+        }
+
+        .left p{
+            margin: 0 auto 30px auto;
+        }
+
+        .buttons{
+            justify-content:center;
+        }
+    }
+
+    /* Celulares grandes (até 768px) */
+    @media (max-width:768px){
+
+        nav ul{
+            display:none; /* escondemos nav para mobile simples */
+        }
+
+        .left h1{
+            font-size:34px;
+        }
+
+        .circle{
+            width:260px;
+            height:260px;
+        }
+
+        .person{
+            width:240px;
+        }
+    }
+
+    /* Celulares pequenos (até 480px) */
+    @media (max-width:480px){
+        .background{
+            padding:20px;
+        }
+
+        .left h1{
+            font-size:28px;
+        }
+
+        .buttons{
+            flex-direction:column;
+            gap:10px;
+        }
+
+        .buttons button{
+            width:100%;
+            padding:14px;
+        }
+
+        .circle{
+            width:210px;
+            height:210px;
+        }
+
+        .person{
+            width:190px;
+        }
+    }
+
+
+
+
+
+
+/*ESTILO CAROUSEL 1*/
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  
+  
+  
+  
+  width: 100%;
+  max-width: 600px;   /* ajuste para o tamanho do seu carousel */
+  height: 500px;      /* altura fixa */
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+}
+
+
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  
+  height: 100%;
+  object-fit: cover;
+  
+  
+  /*
+  height: 100%;
+  object-fit: cover;     /* mantém proporção e preenche o espaço */
+  /*object-position: center; /* centraliza a imagem */
+  /*display: block; */
+}
+
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  /*position: absolute;*/
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 5px;
+  position: absolute;
+  margin-right: 0;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.dot-container {
+  text-align: center; /* Centraliza os spans inline dentro desta div */
+  position: absolute;  /* Posicionamento absoluto em relação ao slideshow-container */
+  bottom: 10px;        /* Distância do fundo do slideshow */
+  left: 50%;         /* Move o ponto de início para o meio */
+  transform: translateX(-50%); /* Move de volta metade da sua própria largura para centralização perfeita */
+  width: 100%;       /* Opcional: Garante que o container ocupe toda a largura para o text-align funcionar bem */
+}
+
+
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4;}
+  to {opacity: 1;}
+}
+
+/* O container principal que ativa o layout flexível */
+.layout-container {
+    display: flex; /* Define os filhos para se alinharem em uma linha */
+    justify-content: space-between; /* Distribui o espaço entre as duas colunas */
+    align-items: flex-start; /* Alinha os itens pelo topo */
+    width: 100%; /* Garante que ocupe toda a largura da tela */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
+    gap: 20px; /* Adiciona um espaço (gutter) entre as colunas */
+}
+.carousel-wrapper {
+    flex: 1 1 50%;
+    max-width: 600px;
+}
+
+
+/* Os itens filhos (as colunas) */
+.carousel-wrapper,
+.text-wrapper {
+    flex: 1 1 50%; /* Faz com que cada um cresça e ocupe 50% da largura disponível */
+    box-sizing: border-box; /* Garante que padding/border não aumentem a largura total */
+}
+
+
+/* Estilos básicos para o container do texto */
+.text-wrapper {
+    /* As regras de layout (flex: 1 1 50%;) já estão no bloco anterior */
+	max-width: 50%;
+    background-color: #ffffff; /* Fundo branco para o bloco de texto */
+    padding: 30px;             /* Espaçamento interno para o conteúdo não grudar nas bordas */
+    border-radius: 5px;        /* Cantos levemente arredondados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para destacar o bloco */
+    height: fit-content;       /* Ajusta a altura do wrapper ao conteúdo interno */
+}
+
+/* Estilos para o título dentro do wrapper */
+.text-wrapper h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    border-bottom: 2px solid #007bff; /* Linha decorativa embaixo do título */
+    padding-bottom: 10px;
+}
+
+/* Estilos para os parágrafos */
+.text-wrapper p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px; /* Espaço abaixo dos parágrafos */
+}
+
+/* Estilo para o botão de ação (se estiver usando a classe btn-custom) */
+.btn-custom {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Cor principal do botão (azul) */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+
+
+
+
+
+
+
+
+
+/* O Modal (background preto) */
+.modal {
+  display: none; /* Escondido por padrão */
+  position: fixed; /* Fica no topo da página */
+  z-index: 1000; /* Fica acima de todo o resto do conteúdo */
+  padding-top: 50px; /* Distância do topo */
+  left: 0;
+  top: 0;
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  overflow: auto; /* Habilita scroll se necessário */
+  background-color: rgb(0,0,0); /* Cor de fundo fallback */
+  background-color: rgba(0,0,0,0.9); /* Preto com transparência */
+}
+
+/* Conteúdo do Modal (a imagem centralizada) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  position: relative; /* Para posicionar as setas de navegação dentro */
+}
+
+/* O botão de fechar */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Adicione também o CSS das setas "prev" e "next" dentro do modal, elas podem usar o mesmo estilo do carrossel principal, mas talvez precise ajustar a cor/posição. */
+
+
+
+
+
+
+
+
+</style>

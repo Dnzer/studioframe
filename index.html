@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STUDIO FRAME</title>
+	
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	
+
+
+	
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="background">
+
+    <nav>
+        <div class="menu-icon">☰</div>
+        <ul>
+            <li>HOME</li>
+            <li>SOBRE</li>
+            <li>SERVIÇOS</li>
+            <li>AJUDA</li>
+        </ul>
+        <div class="logo">STUDIO FRAME.</div>
+    </nav>
+
+    <div class="content">
+        <div class="left">
+            <h1>Eternize as suas memórias</h1>
+            <br>
+			<p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum ipsum augue, tincidunt ut arcu id, venenatis
+                efficitur leo.
+            </p>
+
+            <div class="buttons">
+                <button>LEARN MORE</button>
+                <button>SIGN UP</button>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="circle"></div>
+				<!-- Troque por sua imagem -->
+				<img class="person" src="Logo.jpg">
+        </div>
+    </div>
+</div>
+<br>
+
+	<div class="layout-container">
+	
+		<div class="carousel-wrapper">
+			<!-- Slideshow container -->
+			<div class="slideshow-container">
+				
+				 <div class="mySlides fade">
+					<!-- Adicionado onclick para abrir o modal com o índice da imagem -->
+					<img src="imagens/beach.jpg" onclick="openModal();currentSlideModal(1)" class="hover-shadow">
+					<div class="numbertext">1 / 4</div>
+					
+				 </div>
+
+				 <div class="mySlides fade">
+					<img src="imagens/tamara-12.jpg" onclick="openModal();currentSlideModal(2)" class="hover-shadow" style="width:100%">
+					<div class="numbertext">2 / 4</div>
+					
+				 </div>
+				 
+				 <div class="mySlides fade">
+					<img src="imagens/lgfit-13.jpg" onclick="openModal();currentSlideModal(2)" class="hover-shadow" style="width:100%">
+					<div class="numbertext">3 / 4</div>
+					
+				 </div>
+				 
+				  <div class="mySlides fade">
+					<img src="imagens/vanessa-43.jpg" onclick="openModal();currentSlideModal(2)" class="hover-shadow" style="width:100%">
+					<div class="numbertext">4 / 4</div>
+					
+				 </div>
+				 
+				 
+
+				 <a class="prev" onclick="plusSlides(-1)">❮</a>
+				 <a class="next" onclick="plusSlides(1)">❯</a>
+				
+				<div class="dot-container">
+					<span class="dot" onclick="currentSlide(1)"></span>
+					<span class="dot" onclick="currentSlide(2)"></span>
+					<span class="dot" onclick="currentSlide(3)"></span>
+					<span class="dot" onclick="currentSlide(4)"></span>
+				</div>
+			</div>
+		</div>
+			<!-- Wrapper para o Texto (será seu item direito) -->
+		<div class="text-wrapper">
+			<div class="text-content" style="padding: 20px;">
+				<h2>Título do Texto Lateral</h2>
+				<p>Este texto está agora ao lado do carrossel, sem usar classes de framework como `.row` ou `.col-md-*`.</p>
+				<p>Usamos apenas display: flex no container pai e width: 50% nos elementos filhos para dividir o espaço igualmente.</p>
+				<a href="#" class="btn-custom">Botão de Ação</a>
+			</div>
+		</div>
+		
+	</div>
+		
+		
+		
+		
+	<!-- ESTRUTURA DO MODAL (VISUALIZADOR) -->
+	<div id="myModal" class="modal">
+		<span class="close cursor" onclick="closeModal()">&times;</span>
+		<div class="modal-content">
+
+			<div class="mySlidesModal">
+				<div class="numbertext">1 / 4</div>
+				<img src="imagens/beach.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlidesModal">
+				<div class="numbertext">2 / 4</div>
+				<img src="imagens/tamara-12.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlidesModal">
+				<div class="numbertext">3 / 4</div>
+				<img src="imagens/lgfit-13.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlidesModal">
+				<div class="numbertext">4 / 4</div>
+				<img src="imagens/vanessa-43.jpg" style="width:100%">
+			</div>
+
+			<!-- Navegação do Modal -->
+			<a class="prev" onclick="plusSlidesModal(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlidesModal(1)">&#10095;</a>
+		</div>
+	</div>
+
+		
+	<br>
+
+	
+	<div class="row">
+		<div id="gtco-features-2">
+				<div class="gtco-container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+							<h2>VIDEO MAKER</h2>
+							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+								<span class="icon">
+									<i class="icon-check"></i>
+								</span>
+								<div class="feature-copy">
+									<h3>Retina Ready</h3>
+									<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+								</div>
+							</div>
+
+							<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+								<span class="icon">
+									<i class="icon-check"></i>
+								</span>
+								<div class="feature-copy">
+									<h3>Fully Responsive</h3>
+									<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+								</div>
+							</div>
+
+							<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+								<span class="icon">
+									<i class="icon-check"></i>
+								</span>
+								<div class="feature-copy">
+									<h3>Ready To Use</h3>
+									<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-6">
+								<video controls src="video.mp4"  width="400" height="400"</video>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script src="script.js"></script>
+</body>
+</html>

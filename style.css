@@ -536,6 +536,137 @@
     object-fit: cover; 
 }
 
+/* ============================================
+   RESPONSIVIDADE REAL — OTIMIZADA
+   ============================================ */
+
+/* ---------- Desktop (acima de 1200px) ---------- */
+@media (min-width:1200px){
+    .slideshow-container{
+        width: 1100px;
+        height: 550px;
+    }
+
+    .mySlides img{
+        height: 550px;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+
+/* ---------- Tablets landscape (até 1024px) ---------- */
+@media (max-width:1024px){
+
+    .content{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .right{
+        order: -1; /* foto sobe */
+    }
+
+    .slideshow-container{
+        width: 90%;
+        height: 400px;
+    }
+
+    .mySlides img{
+        height: 400px;
+    }
+
+    .text-wrapper{
+        max-width: 90%;
+        margin: 30px auto;
+    }
+}
+
+
+/* ---------- Tablets / celulares grandes (até 768px) ---------- */
+@media (max-width:768px){
+
+    nav ul{
+        display:none;
+    }
+
+    .left h1{
+        font-size: 32px;
+    }
+
+    .slideshow-container{
+        width: 100%;
+        height: 320px;
+    }
+
+    .mySlides img{
+        height: 320px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .text-wrapper{
+        max-width: 100%;
+        margin: 20px 0;
+    }
+
+    .video-container{
+        width: 100%;
+        height: 350px;
+    }
+}
+
+
+/* ---------- Celulares médios (até 580px) ---------- */
+@media (max-width:580px){
+
+    .left h1{
+        font-size: 28px;
+    }
+
+    .slideshow-container{
+        height: 260px;
+    }
+
+    .mySlides img{
+        height: 260px;
+    }
+
+    .text-content{
+        padding: 20px !important;
+    }
+
+    .video-container{
+        height: 260px;
+    }
+}
+
+
+/* ---------- Celulares pequenos (até 420px) ---------- */
+@media (max-width:420px){
+
+    .background{
+        padding: 10px;
+    }
+
+    .left h1{
+        font-size: 24px;
+    }
+
+    .slideshow-container{
+        height: 220px;
+    }
+
+    .mySlides img{
+        height: 220px;
+    }
+
+    .video-container{
+        height: 220px;
+    }
+}
+
 
 
 
@@ -543,6 +674,7 @@
 
 
 </style>
+
 
 
 

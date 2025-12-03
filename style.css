@@ -180,7 +180,8 @@
         }
 
 		.layout-container{
-			height: 400px;
+			max-height:100%;
+			max-width:100%;
 		}
     }
 
@@ -204,7 +205,8 @@
             width:240px;
         }
 		.layout-container{
-			height: 400px;
+			max-height:100%;
+			max-width:100%;
 		}
     }
 
@@ -237,7 +239,8 @@
             width:190px;
         }
 		.layout-container{
-			height: 400px;
+			max-height:100%;
+			max-width:100%;
 		}
     }
 
@@ -508,4 +511,5 @@
 
 
 </style>
+
 

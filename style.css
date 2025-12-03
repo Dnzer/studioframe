@@ -183,6 +183,13 @@
 			height:40vh;
 			width:40vw;
 		}
+		.slideshow-container{
+			height:40vh;
+			width:40vh;
+			
+		}
+
+		
     }
 
     /* Celulares grandes (até 768px) */
@@ -207,6 +214,10 @@
 		.layout-container{
 			height:40vh;
 			width:40vw;
+		}
+		.slideshow-container{
+			height:40vh;
+			width:40vh;	
 		}
     }
 
@@ -241,6 +252,10 @@
 		.layout-container{
 			height:40vh;
 			width:40vw;
+		}
+		.slideshow-container{
+			height:40vh;
+			width:40vh;	
 		}
     }
 
@@ -511,6 +526,7 @@
 
 
 </style>
+
 
 
 

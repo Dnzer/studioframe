@@ -178,6 +178,10 @@
         .buttons{
             justify-content:center;
         }
+
+		.layout-container{
+			height: 400px;
+		}
     }
 
     /* Celulares grandes (até 768px) */
@@ -199,6 +203,9 @@
         .person{
             width:240px;
         }
+		.layout-container{
+			height: 400px;
+		}
     }
 
     /* Celulares pequenos (até 480px) */
@@ -229,6 +236,9 @@
         .person{
             width:190px;
         }
+		.layout-container{
+			height: 400px;
+		}
     }
 
 
@@ -498,3 +508,4 @@
 
 
 </style>
+

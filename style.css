@@ -35,7 +35,7 @@
             linear-gradient(0deg, rgba(255,255,255,0.05) 1px, transparent 1px);
         /*background-size:45px 45px;*/
         opacity:0.2;
-		z-index: 1;/*-1*/
+		z-index: -1;/*-1*/
     }
 	
 	
@@ -241,36 +241,32 @@
 
 /* Slideshow container */
 .slideshow-container {
-  
-  
-  
-  
-  width: 100%;
-  max-width: 600px;   /* ajuste para o tamanho do seu carousel */
+  /*max-width: 800px;   /* ajuste para o tamanho do seu carousel */
   height: 500px;      /* altura fixa */
+  width: 1300px;
   position: relative;
   overflow: hidden;
-  margin-left: 0;
+  margin-left: auto; /* Centraliza */
+  margin-right: auto; /* Centraliza */
+  
 }
 
 
 
-/* Hide the images by default */
+/* Ocultar as imagens por padrão*/
 .mySlides {
   display: none;
 }
 
 .mySlides img {
   
-  height: 100%;
+  width: 100%;
+  height: 500px;
   object-fit: cover;
-  
-  
-  /*
-  height: 100%;
-  object-fit: cover;     /* mantém proporção e preenche o espaço */
-  /*object-position: center; /* centraliza a imagem */
-  /*display: block; */
+  display: block;
+  object-position: center center; /* centro exato da imagem */
+
+
 }
 
 
@@ -362,32 +358,26 @@
 
 /* O container principal que ativa o layout flexível */
 .layout-container {
-    display: flex; /* Define os filhos para se alinharem em uma linha */
-    justify-content: space-between; /* Distribui o espaço entre as duas colunas */
+    /*display: flex; /* Define os filhos para se alinharem em uma linha */
+    /*justify-content: space-between; /* Distribui o espaço entre as duas colunas */
     align-items: flex-start; /* Alinha os itens pelo topo */
     width: 100%; /* Garante que ocupe toda a largura da tela */
     flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
-    gap: 20px; /* Adiciona um espaço (gutter) entre as colunas */
-}
-.carousel-wrapper {
-    flex: 1 1 50%;
-    max-width: 600px;
+    /*gap: 20px; /* Adiciona um espaço (gutter) entre as colunas */
+	
+	
+	top: 100px;         /* Distância exata de 100 pixels do topo */
+	left: 20px;         /* Opcional: distância da esquerda para evitar que ela ocupe toda a largura */
+	
 }
 
-
-/* Os itens filhos (as colunas) */
-.carousel-wrapper,
-.text-wrapper {
-    flex: 1 1 50%; /* Faz com que cada um cresça e ocupe 50% da largura disponível */
-    box-sizing: border-box; /* Garante que padding/border não aumentem a largura total */
-}
 
 
 /* Estilos básicos para o container do texto */
 .text-wrapper {
     /* As regras de layout (flex: 1 1 50%;) já estão no bloco anterior */
 	max-width: 50%;
-    background-color: #ffffff; /* Fundo branco para o bloco de texto */
+    background-color: #0D1B2A; /* Fundo branco para o bloco de texto */
     padding: 30px;             /* Espaçamento interno para o conteúdo não grudar nas bordas */
     border-radius: 5px;        /* Cantos levemente arredondados */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para destacar o bloco */
@@ -397,7 +387,7 @@
 /* Estilos para o título dentro do wrapper */
 .text-wrapper h2 {
     font-size: 24px;
-    color: #333;
+    color: #FFFFFF;
     margin-bottom: 15px; /* Espaço abaixo do título */
     border-bottom: 2px solid #007bff; /* Linha decorativa embaixo do título */
     padding-bottom: 10px;
@@ -406,7 +396,7 @@
 /* Estilos para os parágrafos */
 .text-wrapper p {
     font-size: 16px;
-    color: #666;
+    color: #FFFFFF;
     line-height: 1.5;
     margin-bottom: 20px; /* Espaço abaixo dos parágrafos */
 }
@@ -443,7 +433,9 @@
   left: 0;
   top: 0;
   width: 100%; /* Largura total */
-  height: 100%; /* Altura total */
+  height: 80vh; /* ou outro tamanho desejado */
+  /*height: 100%;  Altura total */
+  object-fit: contain; /* mantém a proporção da imagem */
   overflow: auto; /* Habilita scroll se necessário */
   background-color: rgb(0,0,0); /* Cor de fundo fallback */
   background-color: rgba(0,0,0,0.9); /* Preto com transparência */
@@ -480,6 +472,24 @@
 
 /* Adicione também o CSS das setas "prev" e "next" dentro do modal, elas podem usar o mesmo estilo do carrossel principal, mas talvez precise ajustar a cor/posição. */
 
+.video-container {
+    /* Define uma altura para o container, se necessário. 
+       Se a div pai não tiver uma altura definida, 100% não funcionará como esperado. */
+    height: 800px; /* Exemplo: use a altura desejada para o seu player */
+    width: 800px; /* Ocupa a largura total da coluna do Bootstrap */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    /* 
+      Define como o conteúdo do vídeo se ajusta ao container:
+      - 'cover': Redimensiona para preencher todo o container, cortando o excesso se necessário, mas sem distorcer. (Recomendado para fundos de vídeo)
+      - 'contain': Redimensiona para caber dentro do container, mantendo a proporção, mas pode deixar barras pretas (letterbox/pillarbox).
+      - 'fill': Estica o vídeo para preencher completamente, o que pode distorcer a imagem.
+    */
+    object-fit: cover; 
+}
 
 
 

@@ -13,6 +13,16 @@
         color:white;
     }
 
+
+h2 {
+    font-family: "Pacifico", sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+
     .background{
         /*background: linear-gradient(135deg, #150B26, #142c44);*/
         min-height:100vh;
@@ -76,7 +86,7 @@
 
     /* CONTEÚDO */
     .content{
-        margin-top:80px;
+		min-height: 100vh;   /* ocupa 70% da altura da viewport */
         display:flex;
         justify-content:space-between;
         align-items:center;
@@ -89,14 +99,14 @@
     }
 
     .left h1{
-        font-size:48px;
+        font-size:40px;
         line-height:1.1;
         margin-bottom:20px;
         font-weight:600;
     }
 
     .left p{
-        font-size:15px;
+        font-size:20px;
         color:#d4d4d4;
         margin-bottom:30px;
         line-height:1.5;
@@ -136,7 +146,7 @@
     .circle{
         width:360px;
         height:360px;
-        background:#222;
+        background:#150B26;
         border-radius:50%;
         position:absolute;
         z-index:1; /*antes 1*/
@@ -174,11 +184,12 @@
         .left p{
             margin: 0 auto 30px auto;
         }
+	
 
         .buttons{
             justify-content:center;
         }
-
+		
 		.layout-container{
 			height:40vh;
 			width:40vw;
@@ -193,8 +204,6 @@
 			height:40vh;
 			width:40vw;
 		}
-
-		
     }
 
     /* Celulares grandes (até 768px) */
@@ -216,11 +225,11 @@
         .person{
             width:240px;
         }
-		.layout-container{
-			height:40vh;
-			width:40vw;
-		}
 		
+		
+		.layout-container{
+			height: 40vh;
+		}
 		.slideshow-container{
 			height:40vh;
 			width:40vw;
@@ -230,6 +239,8 @@
 			height:40vh;
 			width:40vw;
 		}
+		
+		
     }
 
     /* Celulares pequenos (até 480px) */
@@ -259,21 +270,23 @@
 
         .person{
             width:190px;
-        }
-		.layout-container{
-			height:40vh;
-			width:40vw;
-		}
 		
+        }
+		
+		.layout-container{
+			height: 400px;
+		}
 		.slideshow-container{
 			height:40vh;
-			width:40vw;
+			width:40vh;
 			
 		}
+		
 		.mySlides img {
 			height:40vh;
-			width:40vw;
+			width:40vh;
 		}
+		
     }
 
 
@@ -284,24 +297,39 @@
 /*ESTILO CAROUSEL 1*/
 * {box-sizing:border-box}
 
-/* Slideshow container */
-.slideshow-container {
-  /*max-width: 800px;   /* ajuste para o tamanho do seu carousel */
-  height: 500px;      /* altura fixa */
-  width: 1300px;
-  position: relative;
-  overflow: hidden;
-  margin-left: auto; /* Centraliza */
-  margin-right: auto; /* Centraliza */
-  
+
+
+/* O container principal que ativa o layout flexível */
+.layout-container {
+    /*display: flex; /* Define os filhos para se alinharem em uma linha */
+    /*justify-content: space-between; /* Distribui o espaço entre as duas colunas */
+   /* align-items: flex-start; /* Alinha os itens pelo topo */
+    width: 100%; /* Garante que ocupe toda a largura da tela */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
+    /*gap: 20px; /* Adiciona um espaço (gutter) entre as colunas */
+	
 }
 
 
 
+.slideshow-container {
+  /*max-width: 800px;   /* ajuste para o tamanho do seu carousel */
+	height: 500px;      /* altura fixa */
+	width: 1300px;
+	position: relative;
+	overflow: hidden;
+	margin-left: auto; /* Centraliza */
+	margin-right: auto; /* Centraliza */
+	
+
+  
+}
 /* Ocultar as imagens por padrão*/
 .mySlides {
   display: none;
 }
+
+
 
 .mySlides img {
   
@@ -401,32 +429,22 @@
   to {opacity: 1;}
 }
 
-/* O container principal que ativa o layout flexível */
-.layout-container {
-    /*display: flex; /* Define os filhos para se alinharem em uma linha */
-    /*justify-content: space-between; /* Distribui o espaço entre as duas colunas */
-    align-items: flex-start; /* Alinha os itens pelo topo */
-    width: 100%; /* Garante que ocupe toda a largura da tela */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
-    /*gap: 20px; /* Adiciona um espaço (gutter) entre as colunas */
-	
-	
-	top: 100px;         /* Distância exata de 100 pixels do topo */
-	left: 20px;         /* Opcional: distância da esquerda para evitar que ela ocupe toda a largura */
-	
-}
+
 
 
 
 /* Estilos básicos para o container do texto */
 .text-wrapper {
     /* As regras de layout (flex: 1 1 50%;) já estão no bloco anterior */
-	max-width: 50%;
+	max-width: 30%;
     background-color: #0D1B2A; /* Fundo branco para o bloco de texto */
-    padding: 30px;             /* Espaçamento interno para o conteúdo não grudar nas bordas */
+    padding: 10px;             /* Espaçamento interno para o conteúdo não grudar nas bordas */
     border-radius: 5px;        /* Cantos levemente arredondados */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para destacar o bloco */
     height: fit-content;       /* Ajusta a altura do wrapper ao conteúdo interno */
+	margin-left: auto; /* Centraliza */
+	margin-right: auto; /* Centraliza */
+	
 }
 
 /* Estilos para o título dentro do wrapper */
@@ -518,23 +536,70 @@
 /* Adicione também o CSS das setas "prev" e "next" dentro do modal, elas podem usar o mesmo estilo do carrossel principal, mas talvez precise ajustar a cor/posição. */
 
 .video-container {
-    /* Define uma altura para o container, se necessário. 
-       Se a div pai não tiver uma altura definida, 100% não funcionará como esperado. */
-    height: 800px; /* Exemplo: use a altura desejada para o seu player */
-    width: 800px; /* Ocupa a largura total da coluna do Bootstrap */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    height: 600px; /* Altura do objeto pai*/
+    width: 1200px; /*largura do objeto pai */
+	gap: 10px;   
+	
 }
 
-.video-container video {
-    width: 100%;
-    height: 100%;
-    /* 
+  /* 
       Define como o conteúdo do vídeo se ajusta ao container:
       - 'cover': Redimensiona para preencher todo o container, cortando o excesso se necessário, mas sem distorcer. (Recomendado para fundos de vídeo)
       - 'contain': Redimensiona para caber dentro do container, mantendo a proporção, mas pode deixar barras pretas (letterbox/pillarbox).
       - 'fill': Estica o vídeo para preencher completamente, o que pode distorcer a imagem.
     */
-    object-fit: cover; 
+.player-video{
+    height: 100%; /* Altura do objeto pai*/
+    width: 50%; /*largura do objeto pai */
 }
+
+.player-video video{
+	height: 100%; /*altura do play de video = pai*/
+	width: 100%; /*Largura 50% = 600px*/
+	object-fit: cover; /*Obrigo o video ocupar todo o player de video*/ 
+}
+
+.texto-video{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	height:300px;
+	width:250px; /*largura*/
+    background-color: #0D1B2A;             
+    border-radius: 5px;        
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	padding: 20px; /* opcional, mas deixa o texto confortável */
+
+    /* Animação */
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: 2.0s ease;
+}
+
+.texto-video.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.texto-video h3 {
+    margin: 0;
+	font-size: 20px;
+}
+
+.texto-video p {
+    margin-top: 15px; /* opcional */
+}
+
+
+.texto-video:hover {
+    background-color: #435B78; /* Cor do botão ao passar o mouse */
+}
+
+
+
 
 /* ============================================
    RESPONSIVIDADE REAL — OTIMIZADA
@@ -674,9 +739,3 @@
 
 
 </style>
-
-
-
-
-
-

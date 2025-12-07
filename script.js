@@ -61,3 +61,24 @@ function showSlidesModal(n) {
 }
 
 // Chame a função showSlidesModal(1) pelo menos uma vez para garantir que o primeiro slide seja exibido ao abrir.
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const elementos = document.querySelectorAll(".texto-video");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("ativo"); // ativa para cada um
+            }
+        });
+    });
+
+    elementos.forEach(el => observer.observe(el));
+});
+
+
+
